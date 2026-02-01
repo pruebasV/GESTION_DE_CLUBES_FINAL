@@ -1,11 +1,11 @@
-const { Pool } = require("pg");
+import { Pool } from "pg";
 
 const pool = new Pool({
   connectionString: process.env.DB_URL,
   ssl: {
     rejectUnauthorized: false
   },
-  family: 4 // 👈 FUERZA IPv4
+  family: 4 // fuerza IPv4 (bien pensado)
 });
 
-module.exports = pool;
+export default pool;
